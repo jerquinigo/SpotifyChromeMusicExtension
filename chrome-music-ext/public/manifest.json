@@ -15,7 +15,10 @@
   },
   "icons": {
     "16": "logo-small.png",
+    "24": "logo-small.png",
+    "36": "logo-small.png",
     "48": "logo-small.png",
+    "96": "logo-small.png",
     "128": "logo-small.png"
   },
   "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'",

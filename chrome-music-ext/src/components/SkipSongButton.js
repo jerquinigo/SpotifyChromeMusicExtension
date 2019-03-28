@@ -5,8 +5,9 @@ import React from 'react'
    console.log(props, "the props")
 
   return(
-    <div>
-      <button onClick={props.skipSong}>Next</button>
+    <div className="buttonDiv">
+      <button onClick={props.prevSong} className="previousButton"><a>Previous</a></button>
+      <button onClick={props.skipSong} className="nextButton"><a>Next</a></button>
     </div>
   )
 }

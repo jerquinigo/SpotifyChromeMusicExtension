@@ -9,3 +9,7 @@ export const getAllSongs = () => {
 export const getAllGenres = () => {
   return axios.get(`http://api.napster.com/v2.2/genres/g.397/tracks/top?apikey=${secret["apiKey"]}&limit=20`)
 }
+
+export const getSongsByGenre = (id) => {
+  return axios.get(`http://api.napster.com/v2.2/genres/g.${id}/tracks/top?apikey=${secret["apiKey"]}&limit=20`)
+}
