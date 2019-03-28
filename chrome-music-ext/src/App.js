@@ -2,29 +2,20 @@ import React, { Component } from "react";
 // import logo from "./earworm.jpeg";
 import axios from "axios";
 import "./App.css";
+const secret = require("./secret.json");
+
 
 class App extends Component {
   state = {
     allSongs: [],
     currentSong: 0
   };
-  // componentDidMount = () => {
-  //   setInterval(() => {
-  //     this.setState({
-  //       count: this.state.count + 1
-  //     });
-  //   }, 500);
-  // };
-  // addCount = () => {
-  //   this.setState({
-  //     count: this.state.count + 1
-  //   });
-  // };
+
 
   componentDidMount = () => {
     axios
       .get(
-        "http://api.napster.com/v2.2/playlists/pp.125821370/tracks?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4&limit=15&offset=15"
+        `http://api.napster.com/v2.2/playlists/pp.125821370/tracks?apikey=${secret["apiKey"]}&limit=15&offset=15`
       )
       .then(res => {
         this.setState({
@@ -32,18 +23,6 @@ class App extends Component {
         });
       });
   };
-
-  // displaySongs = () => {
-  //   return this.state.allSongs.map(track => {
-  //     return (
-  //       <div>
-  //         <video controls name="media">
-  //           <source src={track.previewURL} type="audio/mpeg" />
-  //         </video>
-  //       </div>
-  //     );
-  //   });
-  // };
 
   displaySong = () => {
     let track = this.state.allSongs[this.state.currentSong];
