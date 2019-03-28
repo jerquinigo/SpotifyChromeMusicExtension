@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import logo from "./earworm.jpeg";
 
 import DisplayAllSongs from './components/DisplayAllSongs.js'
+import GenresDropDown from './components/GenresDropDown.js'
 import "./App.css";
 
 
@@ -20,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <GenresDropDown />
         <DisplayAllSongs />
       </div>
     );
