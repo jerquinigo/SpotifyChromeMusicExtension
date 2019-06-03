@@ -9,9 +9,9 @@ constructor(){
     picked: ''
   }
 }
-componentDidMount(){
-// this.displayGenres()
-}
+// componentDidMount(){
+// // this.displayGenres()
+// }
 
 // displayGenres = () => {
 //   return songsApi.getAllGenres()

@@ -8,6 +8,7 @@ class DisplayAllSongs extends Component{
 constructor(){
   super()
   this.state = {
+    autoplay: false,
     allSongs: [],
     currentSong: 9,
     picked: 115,
@@ -39,6 +40,8 @@ this.getSongsByGenre(id)
 
 
 
+
+
 // getAllSongs = () => {
 //   return songsApi.getAllSongs()
 //   .then(res => {
@@ -50,18 +53,28 @@ this.getSongsByGenre(id)
 //     console.log(err)
 //   })
 // }
+// timeOutFunc = () => {
+//   setTimeout(() => {
+//     this.setState({
+//       autoplay: true
+//     })
+//   }, 300000)
+// }
 
 displaySong = () => {
   let track = this.state.allSongs[this.state.currentSong];
   return (
     <div className="displaySong">
       <div className="audioDiv">
-        <audio
-          controls
-          name="media"
-          src={track.previewURL}
-          type="audio/mp3"
-        />
+        {!this.state.autoplay ? (
+          <audio
+            autoPlay
+            controls
+            name="media"
+            src={track.previewURL}
+            type="audio/mp3"
+            />
+        ) : null}
     </div>
     <div className="trackName">
       <h2>{track.name}</h2>
@@ -92,7 +105,6 @@ listGenres = () => {
  };
 
  changeHandler = e => {
-
  this.getSongsByGenre(e.target.value)
  };
 
@@ -111,3 +123,4 @@ listGenres = () => {
 }
 
 export default DisplayAllSongs
+// {this.timeOutFunc()}
